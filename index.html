@@ -150,7 +150,7 @@
                 <dt>Exterior de una caja:</dt>
                 <dd>
                     <p>
-                        En css todos los objetos tienen una caja alrededor, por así decirlo. Estas interactuan entre si y se usan para alinear objetos. Entender su funcionamiento es clave a la hora de crear el diseño de una página. Lo primero que debes saber es que existen dos tipos de cajas con funciones distintas:
+                        En css todos los objetos tienen una caja alrededor, por así decirlo. Estas interactuan entre si y se usan para alinear objetos. Entender su funcionamiento es clave a la hora de crear el diseño de una página. Lo primero que debes saber es que existen dos tipos de cajas con funciones distintas, las cuales se definen mediante la propiedad "display" y los valores "block" e "inline". Estas se diferencian en lo siguiente:
                     </p>
                     <dl>
                         <dt>Cajas "Block":</dt>
@@ -160,50 +160,51 @@
                                     El elemento se posiciona en una línea nueva.
                                 </li>
                                 <li>
-                                    La caja se expande en la dirección del inline y en la mayoria de los casos ocupa todo el espacio disponible en su recipiente.
+                                    La caja se expande en la dirección del inline (representada en la imagen más abajo) y en la mayoria de los casos ocupa todo el espacio disponible en su recipiente.
                                 </li>
                                 <li>
                                     Las propiedades alto y ancho se respetan.
                                 </li>
                                 <li>
-                                    El padding, margin y border causan que los otros elementos sean empujados fuera de la caja.
+                                    El padding, margin y border causan que los otros elementos sean empujados.
                                 </li>
                                 <li>
-                                    Algunos elementos HTML como el h1 y el p, usan cajas block con el tipo display exterior por defecto.
+                                    Algunos elementos HTML como el h1 y el p, usan cajas del tipo "block".
                                 </li>
                             </ul>                            
                         </dd>
-                        <dt>Cajas "Inline":</dt>
-                        <dd>
-                            <ul>
-                                <li>
-                                    El elemento se posiciona en la misma línea.
-                                </li>
-                                <li>
-                                    Las propiedades alto y ancho se ignoran.
-                                </li>
-                                <li>
-                                    El padding, margin y border afectan a la caja pero no causan que los otros elementos inline sean empujados.
-                                </li>
-                                <li>
-                                    El padding, margin y border horizontal si empujan otras cajas inline.
-                                </li>
-                                <li>
-                                    Algunos elementos HTML como el span, em y strong usan cajas inline con el tipo display exterior por defecto.
-                                </li>
-                            </ul>            
-                        </dd>
                     </dl>
+                    <dt>Cajas "Inline":</dt>
+                    <dd>
+                        <ul>
+                            <li>
+                                El elemento se posiciona en la misma línea.
+                            </li>
+                            <li>
+                                Las propiedades alto y ancho se ignoran.
+                            </li>
+                            <li>
+                                El padding, margin y border afectan a la caja pero no causan que los otros elementos inline sean empujados.
+                            </li>
+                            <li>
+                                El padding, margin y border horizontal si empujan otras cajas inline.
+                            </li>
+                            <li>
+                                Algunos elementos HTML como el span, em y strong usan cajas inline por defecto.
+                            </li>
+                        </ul>            
+                    </dd>
                     <footer>
-                        <p>
-                            El tipo de caja aplicada a un elemento se define mediante la propiedad "display" y los valores como "block" e "inline" se refiere a el tipo exterior.
-                        </p>
                         <figure>
-                            <img src="assets\img\boxmodel.png" alt="Modelo de caja">
-                            <figcaption>Representación de una caja</figcaption>
+                            <img src="assets\img\strbl-in.png" alt="Diferencias entre un elemento block e inline">
+                            <figcaption>Diferencias entre un elemento "block" e "inline"</figcaption>
                         </figure>
                         <figure>
-                            <img src="assets\img\bl-in.svg" alt="Dirección block e inline">
+                            <img src="assets\img\boxmodel.png" alt="Modelo de caja">
+                            <figcaption>Representación del exterior una caja</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets\img\bl-in.png" alt="Dirección block e inline">
                             <figcaption>Expansión de los contenidos en las direcciones "block" e "inline"</figcaption>
                         </figure>
                     </footer>
