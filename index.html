@@ -18,20 +18,22 @@
     <header>
         <h1>GUIA SUPREMA DE BOOTSTRAP</h1>
         <p>(pero sin Bootstrap)</p>
+    </header>
+    <aside>
         <nav id="darkModeNav" class="form-check form-switch">
             <ol>
                 <li><a href="#ResumenBootstrap"> Bootstrap</a></li>
                 <li><a href="#InstalacionyUso">Instalación y Uso</a></li>
                 <li><a href="#Breakpoints">Breakpoints</a></li>
                 <li><a href="#Modelo-Caja">Modelo de Caja</a></li>
-                <li><a href="#Modelo-Grid">Modelo Grid</a></li>
                 <li><a href="#Modelo-Flexbox">Modelo Flexbox</a></li>
+                <li><a href="#Modelo-Grid">Modelo Grid</a></li>
                 <li><a href="#CuerpoClases">Clases</a></li>
                 <li><a href="#IconosBoot">Iconos</a></li>
             </ol>
         </nav>
         <button id="toggleboot">Añadir Bootstrap</button>
-    </header>
+    </aside>
     <main>
         <section>
             <h2 id="ResumenBootstrap">Bootstrap</h2>
@@ -40,19 +42,19 @@
         </section>
         <section>
             <h2 id="InstalacionyUso">Instalación y Uso</h2>
-            <p>Bootstrap cuenta con una guía de instalación en su <a href="https://getbootstrap.com/docs/5.1/getting-started/download/" target="_blank" rel="external noopener noreferrer">página principal</a>, a la cual acudiremos más adelante, aunque se resume en tres formas distintas dependiendo de nuestras preferencias.</p>
+            <p>Bootstrap cuenta con una guía de instalación en su <a href="https://getbootstrap.com/docs/5.1/getting-started/download/" target="_blank" rel="external noopener noreferrer">página principal (se abre en una pestaña nueva)</a>, a la cual acudiremos más adelante, aunque se resume en tres formas distintas dependiendo de nuestras preferencias.</p>
             <dl>
                 <dt>jsDelivr:</dt>
-                <dd>La primera forma y más sencilla es el uso de jsDelivr, con la cual lo unico que debemos hacer es añadir al head de nuestro html un link al css de Bootstrap y una o dos etiquetas script con referencias al javascript de Bootstrap y Popper dependiendo de que elijamos. Ambas etiquetas se pueden encontrar actualizadas <a href="https://getbootstrap.com/docs/5.1/getting-started/download/#cdn-via-jsdelivr" target="_blank" rel="external noopener noreferrer">en esta sección de su página de descarga</a>. Esta opción es la más conveniente, ya que tiene toda la funcionalidad de Bootstrap sin complicarnos demasiado y nos es util si no queremos profundizar mucho en la estructura o queremos maquetar una página de forma rápida.</dd>
+                <dd>La primera forma y más sencilla es el uso de jsDelivr, con la cual lo unico que debemos hacer es añadir al head de nuestro html un link al css de Bootstrap y una o dos etiquetas script con referencias al javascript de Bootstrap y Popper dependiendo de que elijamos. Ambas etiquetas se pueden encontrar actualizadas <a href="https://getbootstrap.com/docs/5.1/getting-started/download/#cdn-via-jsdelivr" target="_blank" rel="external noopener noreferrer">en esta sección de su página de descarga (se abre en una pestaña nueva)</a>. Esta opción es la más conveniente, ya que tiene toda la funcionalidad de Bootstrap sin complicarnos demasiado y nos es util si no queremos profundizar mucho en la estructura o queremos maquetar una página de forma rápida.</dd>
                 <dt>CSS y JS Compilados:</dt>
-                <dd>La segunda opción más rápida es descargar el css y js compilados directamente. Esto puede sernos util ya que al tener directamente la hoja de estilos que Bootstrap utiliza, podemos ver como funciona para así aprender a darle un mejor uso o incluso editarla para modificar el comportamiento de las distintas clases. Podemos encontrar el enlace de descarga al principio de <a href="https://getbootstrap.com/docs/5.1/getting-started/download/#compiled-css-and-js" target="_blank" rel="external noopener noreferrer">la web de descargas</a>.</dd>
+                <dd>La segunda opción más rápida es descargar el css y js compilados directamente. Esto puede sernos util ya que al tener directamente la hoja de estilos que Bootstrap utiliza, podemos ver como funciona para así aprender a darle un mejor uso o incluso editarla para modificar el comportamiento de las distintas clases. Podemos encontrar el enlace de descarga al principio de <a href="https://getbootstrap.com/docs/5.1/getting-started/download/#compiled-css-and-js" target="_blank" rel="external noopener noreferrer">la web de descargas (se abre en una pestaña nueva)</a>.</dd>
                 <dt>Gestor de paquetes:</dt>
-                <dd>Por último, podemos usar un gestor de paquetes a la hora de implementar Bootstrap en nuestra aplicación.Esta es la mejor opción en caso de que tengas una aplicación que use otro framework, extensa o compleja, para evitar las posibles incompatibilidades, aunque requiere del uso del compilador Sass y Autoprefixer, los cuales usa Bootstrap para funcionar. En <a href="https://getbootstrap.com/docs/5.1/getting-started/download/#package-managers" target="_blank" rel="external noopener noreferrer">esta página</a> se encuentran de forma más detallada que gestores tienen soporte y los comandos a usar.</dd>
+                <dd>Por último, podemos usar un gestor de paquetes a la hora de implementar Bootstrap en nuestra aplicación.Esta es la mejor opción en caso de que tengas una aplicación que use otro framework, extensa o compleja, para evitar las posibles incompatibilidades, aunque requiere del uso del compilador Sass y Autoprefixer, los cuales usa Bootstrap para funcionar. En <a href="https://getbootstrap.com/docs/5.1/getting-started/download/#package-managers" target="_blank" rel="external noopener noreferrer">esta página (se abre en una pestaña nueva)</a> se encuentran de forma más detallada que gestores tienen soporte y los comandos a usar.</dd>
             </dl>
         </section>
         <section>
             <h2 id="Breakpoints">Breakpoints</h2>
-            <p>Bootstrap está diseñado para ser responsive, por lo que gran cantidad de sus clases cuentan con la opción del uso de breakpoints. En resumidas cuentas podemos indicar que estilo queremos usar dependiendo del viewpoint, es decir, el tamaño de nuestra pantalla. Por ejemplo, si le damos a un párrafo las clases p-md-2 y p-lg-4, este tendrá un padding de 0.5 rem en pantallas con un ancho mayor o igual a 768px y 1.5 rem en pantallas un ancho mayor o igual a 992px. La estructura básica de estas clases se forma por un prefijo, que indica que estilo queremos aplicar como puede ser "p" para padding o "m" para margin, un interfijo, que denota el tamaño a partir del que funciona nuestra clase, y un sufijo, que sería el tamaño del prefijo de nuestra clase. A continuación dejare una tabla de interfijos para consultar los distintos breakpoints disponibles y otra de sufijos con los distintos tamaños soportados.</p>
+            <p>Bootstrap está diseñado para ser "responsive", por lo que gran cantidad de sus clases cuentan con la opción del uso de breakpoints. En resumidas cuentas podemos indicar que estilo queremos usar dependiendo del viewpoint, es decir, el tamaño de nuestra pantalla. Por ejemplo, si le damos a un párrafo las clases p-md-2 y p-lg-4, este tendrá un padding de 0.5 rem en pantallas con un ancho mayor o igual a 768px y 1.5 rem en pantallas un ancho mayor o igual a 992px. La estructura básica de estas clases se forma por un prefijo, que indica que estilo queremos aplicar como puede ser "p" para padding o "m" para margin, un interfijo, que denota el tamaño a partir del que funciona nuestra clase, y un sufijo, que sería el tamaño del prefijo de nuestra clase. A continuación dejare una tabla de interfijos para consultar los distintos breakpoints disponibles y otra de sufijos con los distintos tamaños soportados.</p>
             <table class="table table-hover table-striped b">
                 <thead>
                     <tr>
@@ -144,18 +146,113 @@
         </section>
         <section>
             <h2 id="Modelo-Caja">Modelo de Caja</h2>
-            <p></p>
-            <img src="assets\img\boxmodel.png" alt="modelo de caja">
+            <dl>
+                <dt>Exterior de una caja:</dt>
+                <dd>
+                    <p>
+                        En css todos los objetos tienen una caja alrededor, por así decirlo. Estas interactuan entre si y se usan para alinear objetos. Entender su funcionamiento es clave a la hora de crear el diseño de una página. Lo primero que debes saber es que existen dos tipos de cajas con funciones distintas:
+                    </p>
+                    <dl>
+                        <dt>Cajas "Block":</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    El elemento se posiciona en una línea nueva.
+                                </li>
+                                <li>
+                                    La caja se expande en la dirección del inline y en la mayoria de los casos ocupa todo el espacio disponible en su recipiente.
+                                </li>
+                                <li>
+                                    Las propiedades alto y ancho se respetan.
+                                </li>
+                                <li>
+                                    El padding, margin y border causan que los otros elementos sean empujados fuera de la caja.
+                                </li>
+                                <li>
+                                    Algunos elementos HTML como el h1 y el p, usan cajas block con el tipo display exterior por defecto.
+                                </li>
+                            </ul>                            
+                        </dd>
+                        <dt>Cajas "Inline":</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    El elemento se posiciona en la misma línea.
+                                </li>
+                                <li>
+                                    Las propiedades alto y ancho se ignoran.
+                                </li>
+                                <li>
+                                    El padding, margin y border afectan a la caja pero no causan que los otros elementos inline sean empujados.
+                                </li>
+                                <li>
+                                    El padding, margin y border horizontal si empujan otras cajas inline.
+                                </li>
+                                <li>
+                                    Algunos elementos HTML como el span, em y strong usan cajas inline con el tipo display exterior por defecto.
+                                </li>
+                            </ul>            
+                        </dd>
+                    </dl>
+                    <footer>
+                        <p>
+                            El tipo de caja aplicada a un elemento se define mediante la propiedad "display" y los valores como "block" e "inline" se refiere a el tipo exterior.
+                        </p>
+                        <figure>
+                            <img src="assets\img\boxmodel.png" alt="Modelo de caja">
+                            <figcaption>Representación de una caja</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets\img\bl-in.svg" alt="Dirección block e inline">
+                            <figcaption>Expansión de los contenidos en las direcciones "block" e "inline"</figcaption>
+                        </figure>
+                    </footer>
+                </dd>
+                <dt>Interior de una caja:</dt>
+                <dd>
+                    <p>
+                        Las cajas, además de lo mencionado anteriormente, tienen otras propiedades que indican como se van a posicionar los elementos dentro de estas. Por defecto, los elementos dentro de las cajas se comportan normal, es decir, como cualquier otro elemento "block" o "inline".
+                    </p>
+                    <p>
+                        Podemos cambiar el comportamiento de estos usando la propiedad "display" con valores como grid o flex. En este caso, por ejemplo, si usamos "display: flex" en un elemento, el exterior se comporta como una caja tipo "block", pero el interior cambia a tipo "flex". Cualquier objeto o elemento que se encuentre directamente dentro de este seguira las normas de Flexbox, las cuales están explicadas más adelante.
+                    </p>
+                </dd>
+            </dl>
+        </section>
+        <section>
+            <h2 id="Modelo-Flexbox">Modelo Flexbox</h2>
+            <p>
+                Flexbox o Flexible Box es un modulo que provee una forma mucho más sencilla de ordenar, alinear y distribuir el espacio entre los objetos dentro de un contenedor, incluso cuando su tamaño es desconocido y/o dinamico.
+            </p>
+            <p>
+                La principal idea detras de flex es dar a los objetos dentro del contenedor la abilidad para alterar el alto y ancho de estos para que ocupen el máximo de espacio disponible para que se acomode a todo tipo de pantallas, expandiéndolos o encogiéndolos.
+            </p>
+            <p>
+                Lo más importante de flexbox es que, a diferencia del tipo block, verticalmente direccional, o el tipo inline, horizontalmente direccional, el tipo flex ignora las direcciones. Mientras los otros funcionan bien para páginas, tienen una gran falta de flexibilidad a la hora de respaldar aplicaciones grandes o complejas, especialmente cuando a cambios de orientación, redimensionar, estirar o encoger se refiere.
+            </p>
+            <p>
+                Nota: Flexbox es más indicado para los componentes de una aplicación y diseños pequeños, mientras que Grid es más indicado para diseños o layouts a mayor escala.
+            </p>
+            <p>
+                Ya que flexbox es un módulo completo y no solo una propiedad, involucra varias cosas, incluyendo un set completo de propiedades. Algunas de ellas están hechas para ser colocadas en el contenedor o padre (flex container) mientras que otras van colocadas en los elementos interiores o hijos (flex items). En <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-properties" target="_blank" rel="external noopener noreferrer">esta sección de su página (se abre en una pestaña nueva)</a> se encuentra una lista con los distintos atributos aplicables tanto a padres como a hijos con imagenes ilustrativas del funcionamiento de estos.
+            </p>
+            <p>  
+                Aparte, el resto de elementos siguen las direcciones block e inline. Por otro lado, flex se basa en un sistema propio de direcciones, representado en la siguiente imagen.
+            </p>
+            <figure>
+                <img src="assets\img\flex-direct.svg" alt="Flex-flow-directions">
+                <figcaption>"Flex-flow-directions"</figcaption>
+            </figure>
+            <p>
+                Para acabar, cabe destacar que Bootstrap cuenta con clases para los atributos de flex para padres e hijos, las cuales se encuentran en el <a href="#tablaflex">apartado flex</a> de la tabla de clases ubicada más adelante.
+            </p>
         </section>
         <section>
             <h2 id="Modelo-Grid">Modelo Grid</h2>
         </section>
         <section>
-            <h2 id="Modelo-Flexbox">Modelo Flexbox</h2>
-        </section>
-        <section>
             <h2 id="CuerpoClases">Clases</h2>
-            <p>Bootstrap cuenta con varias clases con funcionalidades unicas, todas ellas explicadas en detalle en el <a href="https://getbootstrap.com/docs/5.1/components" target="_blank" rel="external noopener noreferrer">apartado componentes de la web oficial de Bootstrap</a>, por lo que en esta sección encontraras una tabla ordenada alfabeticamente a modo de referencia para implementar dichas clases css de forma rápida, con posible ampliación en un futuro.</p>
+            <p>Bootstrap cuenta con varias clases con funcionalidades unicas, todas ellas explicadas en detalle en el <a href="https://getbootstrap.com/docs/5.1/components" target="_blank" rel="external noopener noreferrer">apartado componentes de la web oficial de Bootstrap (se abre en una pestaña nueva)</a>, por lo que en esta sección encontraras una tabla ordenada alfabeticamente a modo de referencia para implementar dichas clases css de forma rápida, con posible ampliación en un futuro.</p>
             <table class="table table-hover table-striped">
                 <thead>
                     <tr>
