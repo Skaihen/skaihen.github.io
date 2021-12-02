@@ -161,7 +161,7 @@
                                     El elemento se posiciona en una línea nueva.
                                 </li>
                                 <li>
-                                    La caja se expande en la dirección del inline (representada en la imagen más abajo) y en la mayoria de los casos ocupa todo el espacio disponible en su recipiente.
+                                    La caja se expande en la dirección del "inline" (representada en la imagen más abajo, aunque suele ser de izquierda a derecha) y en la mayoria de los casos ocupa todo el espacio disponible en su recipiente.
                                 </li>
                                 <li>
                                     Las propiedades alto y ancho se respetan.
@@ -174,27 +174,27 @@
                                 </li>
                             </ul>                            
                         </dd>
-                    </dl>
-                    <dt>Cajas "Inline":</dt>
-                    <dd>
-                        <ul>
-                            <li>
-                                El elemento se posiciona en la misma línea.
-                            </li>
-                            <li>
-                                Las propiedades alto y ancho se ignoran.
-                            </li>
-                            <li>
-                                El padding, margin y border afectan a la caja pero no causan que los otros elementos inline sean empujados.
-                            </li>
-                            <li>
-                                El padding, margin y border horizontal si empujan otras cajas inline.
-                            </li>
-                            <li>
-                                Algunos elementos HTML como el span, em y strong usan cajas inline por defecto.
-                            </li>
-                        </ul>            
-                    </dd>
+                        <dt>Cajas "Inline":</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    El elemento se posiciona en la misma línea.
+                                </li>
+                                <li>
+                                    Las propiedades alto y ancho se ignoran.
+                                </li>
+                                <li>
+                                    El padding, margin y border afectan a la caja pero no causan que los otros elementos "inline" sean empujados.
+                                </li>
+                                <li>
+                                    El padding, margin y border horizontal si empujan otras cajas "inline".
+                                </li>
+                                <li>
+                                    Algunos elementos HTML como el span, em y strong usan cajas "inline" por defecto.
+                                </li>
+                            </ul>            
+                        </dd>
+                    </dl>    
                     <footer>
                         <figure>
                             <img src="assets\img\strbl-in.png" alt="Diferencias entre un elemento block e inline">
@@ -234,7 +234,7 @@
                 <figcaption>Representación de la propiedad "flex-wrap"—Imagen por "CSS-Tricks"</figcaption>
             </figure>
             <p>
-                Lo más importante de flexbox es que, a diferencia del tipo block, verticalmente direccional, o el tipo inline, horizontalmente direccional, el tipo flex ignora las direcciones. Mientras los otros funcionan bien para páginas, tienen una gran falta de flexibilidad a la hora de respaldar aplicaciones grandes o complejas, especialmente cuando a cambios de orientación, redimensionar, estirar o encoger se refiere.
+                Lo más importante de flexbox es que, a diferencia del tipo "block", verticalmente direccional, o el tipo "inline", horizontalmente direccional, el tipo flex ignora las direcciones. Mientras los otros funcionan bien para páginas, tienen una gran falta de flexibilidad a la hora de respaldar aplicaciones grandes o complejas, especialmente cuando a cambios de orientación, redimensionar, estirar o encoger se refiere.
             </p>
             <p>
                 Nota: Flexbox es más indicado para los componentes de una aplicación y diseños pequeños, mientras que Grid es más indicado para diseños o layouts a mayor escala.
@@ -243,7 +243,7 @@
                 Ya que flexbox es un módulo completo y no solo una propiedad, involucra varias cosas, incluyendo un set completo de propiedades. Algunas de ellas están hechas para ser colocadas en el contenedor o padre (flex container) mientras que otras van colocadas en los elementos interiores o hijos (flex items). En <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-properties" target="_blank" rel="external noopener noreferrer">esta sección de su página (se abre en una pestaña nueva)</a> se encuentra una lista con los distintos atributos aplicables tanto a padres como a hijos con imagenes ilustrativas del funcionamiento de estos.
             </p>
             <p>  
-                Aparte, el resto de elementos siguen las direcciones block e inline. Por otro lado, flex se basa en un sistema propio de direcciones, representado en la siguiente imagen.
+                Aparte, el resto de elementos siguen las direcciones "block" e "inline". Por otro lado, flex se basa en un sistema propio de direcciones, representado en la siguiente imagen.
             </p>
             <figure>
                 <img src="assets\img\flex-direct.svg" alt="Flex-flow-directions">
@@ -256,7 +256,9 @@
         <section>
             <h2 id="Modelo-Grid">Modelo Grid</h2>
             <p>
+                CSS Grid Layout (aka “Grid” or “CSS Grid”), is a two-dimensional grid-based layout system that, compared to any web layout system of the past, completely changes the way we design user interfaces. CSS has always been used to layout our web pages, but it’s never done a very good job of it. First, we used tables, then floats, positioning and inline-block, but all of these methods were essentially hacks and left out a lot of important functionality (vertical centering, for instance). Flexbox is also a very great layout tool, but its one-directional flow has different use cases — and they actually work together quite well! Grid is the very first CSS module created specifically to solve the layout problems we’ve all been hacking our way around for as long as we’ve been making websites.
 
+                The intention of this guide is to present the Grid concepts as they exist in the latest version of the specification. So I won’t be covering the out-of-date Internet Explorer syntax (even though you can absolutely use Grid in IE 11) or other historical hacks.
             </p>
         </section>
         <section>
