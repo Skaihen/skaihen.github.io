@@ -39,6 +39,7 @@
             <h2 id="ResumenBootstrap">Bootstrap</h2>
             <p>Para empezar con esta guía lo primero es saber de que se trata Bootstrap. Bajo el signo "mobile-first", Bootstrap es un framework orientado a la creación de páginas web adaptables de forma rápida y sencilla, el cual añade elementos como iconos o clases que cuentan con distintos estilos.</p>
             <p>Antes de proceder con el resto de la guía cabe mencionar que, pese a las ventajas de Bootstrap a la hora de crear páginas web como la rapidez a corto y largo plazo al tener gran parte de los estilos creados, estos cuentan con la etiqueta !important, y al ser tantos, es posible que nombremos una clase igual a una ya creada por Bootstrap, lo que da pie a errores o creer que nuestro css esta mal y sin saber esto a perder tiempo buscando el fallo. Por suerte son fallos menores que se solucionan cambiando el nombre de nuestra clase o, dependiendo de como implementemos Bootstrap, editables directamente. Cabe destacar que Bootstrap no es necesario para hacer una página, como es el caso de esta, ni para darle estilo, ya que puedes hacer esto con css simplemente si asi lo prefieres.</p>
+            <p>También decir que es recomendable entrar en los enlaces que encontrarás en esta página, ya que llevan directamente a las webs oficiales, donde está todo explicado en detalle.</p>
         </section>
         <section>
             <h2 id="InstalacionyUso">Instalación y Uso</h2>
@@ -55,7 +56,7 @@
         <section>
             <h2 id="Breakpoints">Breakpoints</h2>
             <p>Bootstrap está diseñado para ser "responsive", por lo que gran cantidad de sus clases cuentan con la opción del uso de breakpoints. En resumidas cuentas podemos indicar que estilo queremos usar dependiendo del viewpoint, es decir, el tamaño de nuestra pantalla. Por ejemplo, si le damos a un párrafo las clases p-md-2 y p-lg-4, este tendrá un padding de 0.5 rem en pantallas con un ancho mayor o igual a 768px y 1.5 rem en pantallas un ancho mayor o igual a 992px. La estructura básica de estas clases se forma por un prefijo, que indica que estilo queremos aplicar como puede ser "p" para padding o "m" para margin, un interfijo, que denota el tamaño a partir del que funciona nuestra clase, y un sufijo, que sería el tamaño del prefijo de nuestra clase. A continuación dejare una tabla de interfijos para consultar los distintos breakpoints disponibles y otra de sufijos con los distintos tamaños soportados.</p>
-            <table class="table table-hover table-striped b">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">TIPO</th>
@@ -96,7 +97,7 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table table-hover table-striped">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">SUFIJO</th>
@@ -201,11 +202,11 @@
                         </figure>
                         <figure>
                             <img src="assets\img\boxmodel.png" alt="Modelo de caja">
-                            <figcaption>Representación del exterior una caja</figcaption>
+                            <figcaption>Representación del exterior una caja—Imagen por "Jacob Kagon"</figcaption>
                         </figure>
                         <figure>
                             <img src="assets\img\bl-in.png" alt="Dirección block e inline">
-                            <figcaption>Expansión de los contenidos en las direcciones "block" e "inline"</figcaption>
+                            <figcaption>Expansión de los contenidos en las direcciones "block" e "inline"—Imagen por "MDN Web Docs"</figcaption>
                         </figure>
                     </footer>
                 </dd>
@@ -223,11 +224,15 @@
         <section>
             <h2 id="Modelo-Flexbox">Modelo Flexbox</h2>
             <p>
-                Flexbox o Flexible Box es un modulo que provee una forma mucho más sencilla de ordenar, alinear y distribuir el espacio entre los objetos dentro de un contenedor, incluso cuando su tamaño es desconocido y/o dinamico.
+                Flexbox o Flexible Box es un modulo que provee una forma mucho más sencilla de ordenar, alinear y distribuir el espacio entre los objetos dentro de un contenedor, incluso cuando su tamaño es desconocido y/o dinámico.
             </p>
             <p>
-                La principal idea detras de flex es dar a los objetos dentro del contenedor la abilidad para alterar el alto y ancho de estos para que ocupen el máximo de espacio disponible para que se acomode a todo tipo de pantallas, expandiéndolos o encogiéndolos.
+                La principal idea detras de flex es dar a los objetos dentro del contenedor la habilidad para alterar el alto y ancho de estos para que ocupen el máximo de espacio disponible para que se acomode a todo tipo de pantallas, expandiéndolos o encogiéndolos. Además, este está basado en una dimensión, es decir, todos los elementos se disponen en una línea, la cual los coloca de forma automática, haciendo lo anteriormente mencionado de encoger y expandir o poniendo unos debajo de otros cuando lleguen al tamaño máximo del contenedor si tenemos la propiedad llamada "flex-wrap" activa (aunque siga siendo "una línea" por así decirlo).
             </p>
+            <figure>
+                <img src="assets\img\flwr.png" alt="Representación de flex-wrap">
+                <figcaption>Representación de la propiedad "flex-wrap"—Imagen por "CSS-Tricks"</figcaption>
+            </figure>
             <p>
                 Lo más importante de flexbox es que, a diferencia del tipo block, verticalmente direccional, o el tipo inline, horizontalmente direccional, el tipo flex ignora las direcciones. Mientras los otros funcionan bien para páginas, tienen una gran falta de flexibilidad a la hora de respaldar aplicaciones grandes o complejas, especialmente cuando a cambios de orientación, redimensionar, estirar o encoger se refiere.
             </p>
@@ -242,7 +247,7 @@
             </p>
             <figure>
                 <img src="assets\img\flex-direct.svg" alt="Flex-flow-directions">
-                <figcaption>"Flex-flow-directions"</figcaption>
+                <figcaption>"Flex-flow-directions"—Imagen por "W3C"</figcaption>
             </figure>
             <p>
                 Para acabar, cabe destacar que Bootstrap cuenta con clases para los atributos de flex para padres e hijos, las cuales se encuentran en el <a href="#tablaflex">apartado flex</a> de la tabla de clases ubicada más adelante.
@@ -250,11 +255,14 @@
         </section>
         <section>
             <h2 id="Modelo-Grid">Modelo Grid</h2>
+            <p>
+
+            </p>
         </section>
         <section>
             <h2 id="CuerpoClases">Clases</h2>
             <p>Bootstrap cuenta con varias clases con funcionalidades unicas, todas ellas explicadas en detalle en el <a href="https://getbootstrap.com/docs/5.1/components" target="_blank" rel="external noopener noreferrer">apartado componentes de la web oficial de Bootstrap (se abre en una pestaña nueva)</a>, por lo que en esta sección encontraras una tabla ordenada alfabeticamente a modo de referencia para implementar dichas clases css de forma rápida, con posible ampliación en un futuro.</p>
-            <table class="table table-hover table-striped">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">TIPO</th>
