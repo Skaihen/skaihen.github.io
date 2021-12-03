@@ -4,32 +4,33 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Guia suprema de Bootstrap sin Bootstrap</title>
+    <title>Inicio - Guía suprema de Bootstrap sin Bootstrap</title>
     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css; script-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js; form-action 'self'; report-uri 'self'; sandbox 'none'; frame-ancestors 'none';  base-uri 'none';">
     <meta http-equiv="Feature-Policy" content=" camera 'none'; microphone 'none'; geolocation 'none'; payment 'self';">
     <!-- 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     -->
+    <link rel="icon" type="image/x-icon" href="assets\img\favicon.ico">
     <link href="assets/css/styles.css" rel="stylesheet">
     <script src="assets/js/main.js"></script>
 </head>
 <body>
     <header>
-        <h1>GUIA SUPREMA DE BOOTSTRAP</h1>
+        <h1>GUÍA SUPREMA DE BOOTSTRAP</h1>
         <p>(pero sin Bootstrap)</p>
     </header>
     <aside>
         <nav id="darkModeNav" class="form-check form-switch">
             <ol>
                 <li><a href="#ResumenBootstrap"> Bootstrap</a></li>
-                <li><a href="#InstalacionyUso">Instalación y Uso</a></li>
-                <li><a href="#Breakpoints">Breakpoints</a></li>
-                <li><a href="#Modelo-Caja">Modelo de Caja</a></li>
-                <li><a href="#Modelo-Flexbox">Modelo Flexbox</a></li>
-                <li><a href="#Modelo-Grid">Modelo Grid</a></li>
-                <li><a href="#CuerpoClases">Clases</a></li>
-                <li><a href="#IconosBoot">Iconos</a></li>
+                <li><a href="index.html#InstalacionyUso">Instalación y Uso</a></li>
+                <li><a href="breakpointsyboxmodel.html">Breakpoints</a></li>
+                <li><a href="breakpointsyboxmodel.html#Modelo-Caja">Modelo de Caja</a></li>
+                <li><a href="flexygrid.html">Modelo Flexbox</a></li>
+                <li><a href="flexygrid.html#Modelo-Grid">Modelo Grid</a></li>
+                <li><a href="claseseiconos.html">Clases</a></li>
+                <li><a href="claseseiconos.html#IconosBoot">Iconos</a></li>
             </ol>
         </nav>
         <button id="toggleboot">Añadir Bootstrap</button>
@@ -37,8 +38,8 @@
     <main>
         <section>
             <h2 id="ResumenBootstrap">Bootstrap</h2>
-            <p>Para empezar con esta guía lo primero es saber de que se trata Bootstrap. Bajo el signo "mobile-first", Bootstrap es un framework orientado a la creación de páginas web adaptables de forma rápida y sencilla, el cual añade elementos como iconos o clases que cuentan con distintos estilos.</p>
-            <p>Antes de proceder con el resto de la guía cabe mencionar que, pese a las ventajas de Bootstrap a la hora de crear páginas web como la rapidez a corto y largo plazo al tener gran parte de los estilos creados, estos cuentan con la etiqueta !important, y al ser tantos, es posible que nombremos una clase igual a una ya creada por Bootstrap, lo que da pie a errores o creer que nuestro css esta mal y sin saber esto a perder tiempo buscando el fallo. Por suerte son fallos menores que se solucionan cambiando el nombre de nuestra clase o, dependiendo de como implementemos Bootstrap, editables directamente. Cabe destacar que Bootstrap no es necesario para hacer una página, como es el caso de esta, ni para darle estilo, ya que puedes hacer esto con css simplemente si asi lo prefieres.</p>
+            <p>Para empezar con esta guía lo primero es saber de qué se trata Bootstrap. Bajo el signo "mobile-first", Bootstrap es un framework orientado a la creación de páginas web adaptables de forma rápida y sencilla, el cual añade elementos como iconos o clases que cuentan con distintos estilos.</p>
+            <p>Antes de proceder con el resto de la guía cabe mencionar que, pese a las ventajas de Bootstrap a la hora de crear páginas web como la rapidez a corto y largo plazo al tener gran parte de los estilos creados, estos cuentan con la etiqueta !important, y al ser tantos, es posible que nombremos una clase igual a una ya creada por Bootstrap, lo que da pie a errores o creer que nuestro css está mal y sin saber esto a perder tiempo buscando el fallo. Por suerte son fallos menores que se solucionan cambiando el nombre de nuestra clase o, dependiendo de como implementemos Bootstrap, editables directamente. Cabe destacar que Bootstrap no es necesario para hacer una página, como es el caso de esta, ni para darle estilo, ya que puedes hacer esto con css simplemente si así lo prefieres.</p>
             <p>También decir que es recomendable entrar en los enlaces que encontrarás en esta página, ya que llevan directamente a las webs oficiales, donde está todo explicado en detalle.</p>
         </section>
         <section>
@@ -46,316 +47,12 @@
             <p>Bootstrap cuenta con una guía de instalación en su <a href="https://getbootstrap.com/docs/5.1/getting-started/download/" target="_blank" rel="external noopener noreferrer">página principal (se abre en una pestaña nueva)</a>, a la cual acudiremos más adelante, aunque se resume en tres formas distintas dependiendo de nuestras preferencias.</p>
             <dl>
                 <dt>jsDelivr:</dt>
-                <dd>La primera forma y más sencilla es el uso de jsDelivr, con la cual lo unico que debemos hacer es añadir al head de nuestro html un link al css de Bootstrap y una o dos etiquetas script con referencias al javascript de Bootstrap y Popper dependiendo de que elijamos. Ambas etiquetas se pueden encontrar actualizadas <a href="https://getbootstrap.com/docs/5.1/getting-started/download/#cdn-via-jsdelivr" target="_blank" rel="external noopener noreferrer">en esta sección de su página de descarga (se abre en una pestaña nueva)</a>. Esta opción es la más conveniente, ya que tiene toda la funcionalidad de Bootstrap sin complicarnos demasiado y nos es util si no queremos profundizar mucho en la estructura o queremos maquetar una página de forma rápida.</dd>
+                <dd>La primera manera y más sencilla es el uso de jsDelivr, con la cual lo único que debemos hacer es añadir al head de nuestro HTML un link al CSS de Bootstrap y una o dos etiquetas script con referencias al JavaScript de Bootstrap y Popper dependiendo de que elijamos. Ambas etiquetas se pueden encontrar actualizadas <a href="https://getbootstrap.com/docs/5.1/getting-started/download/#cdn-via-jsdelivr" target="_blank" rel="external noopener noreferrer">en esta sección de su página de descarga (se abre en una pestaña nueva)</a>. Esta opción es la más conveniente, ya que tiene toda la funcionalidad de Bootstrap sin complicarnos demasiado y nos es útil si no queremos profundizar mucho en la estructura o queremos maquetar una página de un modo rápido.</dd>
                 <dt>CSS y JS Compilados:</dt>
-                <dd>La segunda opción más rápida es descargar el css y js compilados directamente. Esto puede sernos util ya que al tener directamente la hoja de estilos que Bootstrap utiliza, podemos ver como funciona para así aprender a darle un mejor uso o incluso editarla para modificar el comportamiento de las distintas clases. Podemos encontrar el enlace de descarga al principio de <a href="https://getbootstrap.com/docs/5.1/getting-started/download/#compiled-css-and-js" target="_blank" rel="external noopener noreferrer">la web de descargas (se abre en una pestaña nueva)</a>.</dd>
+                <dd>La segunda opción más rápida es descargar el CSS y JS compilados directamente. Esto puede sernos útil, ya que al tener directamente la hoja de estilos que Bootstrap utiliza, podemos ver como funciona para así aprender a darle un mejor uso o incluso editarla para modificar el comportamiento de las distintas clases. Podemos encontrar el enlace de descarga al principio de <a href="https://getbootstrap.com/docs/5.1/getting-started/download/#compiled-css-and-js" target="_blank" rel="external noopener noreferrer">la web de descargas (se abre en una pestaña nueva)</a>.</dd>
                 <dt>Gestor de paquetes:</dt>
-                <dd>Por último, podemos usar un gestor de paquetes a la hora de implementar Bootstrap en nuestra aplicación.Esta es la mejor opción en caso de que tengas una aplicación que use otro framework, extensa o compleja, para evitar las posibles incompatibilidades, aunque requiere del uso del compilador Sass y Autoprefixer, los cuales usa Bootstrap para funcionar. En <a href="https://getbootstrap.com/docs/5.1/getting-started/download/#package-managers" target="_blank" rel="external noopener noreferrer">esta página (se abre en una pestaña nueva)</a> se encuentran de forma más detallada que gestores tienen soporte y los comandos a usar.</dd>
+                <dd>Por último, podemos usar un gestor de paquetes a la hora de implementar Bootstrap en nuestra aplicación. Esta es la mejor opción en caso de que tengas una aplicación que emplee otro framework, extensa o compleja, para evitar las posibles incompatibilidades, aunque requiere del uso del compilador SASS y Autoprefixer, los cuales requiere Bootstrap para funcionar. En <a href="https://getbootstrap.com/docs/5.1/getting-started/download/#package-managers" target="_blank" rel="external noopener noreferrer">esta página (se abre en una pestaña nueva)</a> se encuentran de forma más detallada que gestores tienen soporte y los comandos a usar.</dd>
             </dl>
-        </section>
-        <section>
-            <h2 id="Breakpoints">Breakpoints</h2>
-            <p>Bootstrap está diseñado para ser "responsive", por lo que gran cantidad de sus clases cuentan con la opción del uso de breakpoints. En resumidas cuentas podemos indicar que estilo queremos usar dependiendo del viewpoint, es decir, el tamaño de nuestra pantalla. Por ejemplo, si le damos a un párrafo las clases p-md-2 y p-lg-4, este tendrá un padding de 0.5 rem en pantallas con un ancho mayor o igual a 768px y 1.5 rem en pantallas un ancho mayor o igual a 992px. La estructura básica de estas clases se forma por un prefijo, que indica que estilo queremos aplicar como puede ser "p" para padding o "m" para margin, un interfijo, que denota el tamaño a partir del que funciona nuestra clase, y un sufijo, que sería el tamaño del prefijo de nuestra clase. A continuación dejare una tabla de interfijos para consultar los distintos breakpoints disponibles y otra de sufijos con los distintos tamaños soportados.</p>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">TIPO</th>
-                        <th scope="col">INTERFIJO</th>
-                        <th scope="col">TAMAÑO</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="rowgroup">Extra pequeña</th>
-                        <td scope="row">Ninguno</td>
-                        <td>&lt;576px</td>
-                    </tr>
-                    <tr>
-                        <th scope="rowgroup">Pequeña</th>
-                        <td scope="row">sm</td>
-                        <td>&ge;576px</td>
-                    </tr>
-                    <tr>
-                        <th scope="rowgroup">Mediana</th>
-                        <td scope="row">md</td>
-                        <td>&ge;768px</td>
-                    </tr>
-                    <tr>
-                        <th scope="rowgroup">Grande</th>
-                        <td scope="row">lg</td>
-                        <td>&ge;992px</td>
-                    </tr>
-                    <tr>
-                        <th scope="rowgroup">Extra grande</th>
-                        <td scope="row">xl</td>
-                        <td>&ge;1200px</td>
-                    </tr>
-                    <tr>
-                        <th scope="rowgroup">Extra extra grande</th>
-                        <td scope="row">xxl</td>
-                        <td>&ge;1400px</td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">SUFIJO</th>
-                        <th scope="col">USABLE EN</th>
-                        <th scope="col">VALOR</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="rowgroup">0</th>
-                        <td scope="row">margin o padding</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <th scope="rowgroup">1</th>
-                        <td scope="row">margin o padding</td>
-                        <td>$spacer * 0.25rem</td>
-                    </tr>
-                    <tr>
-                        <th scope="rowgroup">2</th>
-                        <td scope="row">margin o padding</td>
-                        <td>$spacer * 0.5rem</td>
-                    </tr>
-                    <tr>
-                        <th scope="rowgroup">3</th>
-                        <td scope="row">margin o padding</td>
-                        <td>$spacer</td>
-                    </tr>
-                    <tr>
-                        <th scope="rowgroup">4</th>
-                        <td scope="row">margin o padding</td>
-                        <td>$spacer * 1.5rem</td>
-                    </tr>
-                    <tr>
-                        <th scope="rowgroup">5</th>
-                        <td scope="row">margin o padding</td>
-                        <td>$spacer * 3rem</td>
-                    </tr>
-                    <tr>
-                        <th scope="rowgroup">auto</th>
-                        <td scope="row">margin</td>
-                        <td>auto</td>
-                    </tr>
-                </tbody>
-            </table>
-            <footer>$spacer es un atributo editable que se encuentra en el Sass de Bootstrap en caso de que lo hayas instalado así. Tiene un valor por defecto de 1rem.</footer>
-        </section>
-        <section>
-            <h2 id="Modelo-Caja">Modelo de Caja</h2>
-            <dl>
-                <dt>Exterior de una caja:</dt>
-                <dd>
-                    <p>
-                        En css todos los objetos tienen una caja alrededor, por así decirlo. Estas interactuan entre si y se usan para alinear objetos. Entender su funcionamiento es clave a la hora de crear el diseño de una página. Lo primero que debes saber es que existen dos tipos de cajas con funciones distintas, las cuales se definen mediante la propiedad "display" y los valores "block" e "inline". Estas se diferencian en lo siguiente:
-                    </p>
-                    <dl>
-                        <dt>Cajas "Block":</dt>
-                        <dd>
-                            <ul>
-                                <li>
-                                    El elemento se posiciona en una línea nueva.
-                                </li>
-                                <li>
-                                    La caja se expande en la dirección del "inline" (representada en la imagen más abajo, aunque suele ser de izquierda a derecha) y en la mayoria de los casos ocupa todo el espacio disponible en su recipiente.
-                                </li>
-                                <li>
-                                    Las propiedades alto y ancho se respetan.
-                                </li>
-                                <li>
-                                    El padding, margin y border causan que los otros elementos sean empujados.
-                                </li>
-                                <li>
-                                    Algunos elementos HTML como el h1 y el p, usan cajas del tipo "block".
-                                </li>
-                            </ul>                            
-                        </dd>
-                        <dt>Cajas "Inline":</dt>
-                        <dd>
-                            <ul>
-                                <li>
-                                    El elemento se posiciona en la misma línea.
-                                </li>
-                                <li>
-                                    Las propiedades alto y ancho se ignoran.
-                                </li>
-                                <li>
-                                    El padding, margin y border afectan a la caja pero no causan que los otros elementos "inline" sean empujados.
-                                </li>
-                                <li>
-                                    El padding, margin y border horizontal si empujan otras cajas "inline".
-                                </li>
-                                <li>
-                                    Algunos elementos HTML como el span, em y strong usan cajas "inline" por defecto.
-                                </li>
-                            </ul>            
-                        </dd>
-                    </dl>    
-                    <footer>
-                        <figure>
-                            <img src="assets\img\strbl-in.png" alt="Diferencias entre un elemento block e inline">
-                            <figcaption>Diferencias entre un elemento "block" e "inline"</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="assets\img\boxmodel.png" alt="Modelo de caja">
-                            <figcaption>Representación del exterior una caja—Imagen por "Jacob Kagon"</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="assets\img\bl-in.png" alt="Dirección block e inline">
-                            <figcaption>Expansión de los contenidos en las direcciones "block" e "inline"—Imagen por "MDN Web Docs"</figcaption>
-                        </figure>
-                    </footer>
-                </dd>
-                <dt>Interior de una caja:</dt>
-                <dd>
-                    <p>
-                        Las cajas, además de lo mencionado anteriormente, tienen otras propiedades que indican como se van a posicionar los elementos dentro de estas. Por defecto, los elementos dentro de las cajas se comportan normal, es decir, como cualquier otro elemento "block" o "inline".
-                    </p>
-                    <p>
-                        Podemos cambiar el comportamiento de estos usando la propiedad "display" con valores como grid o flex. En este caso, por ejemplo, si usamos "display: flex" en un elemento, el exterior se comporta como una caja tipo "block", pero el interior cambia a tipo "flex". Cualquier objeto o elemento que se encuentre directamente dentro de este seguira las normas de Flexbox, las cuales están explicadas más adelante.
-                    </p>
-                </dd>
-            </dl>
-        </section>
-        <section>
-            <h2 id="Modelo-Flexbox">Modelo Flexbox</h2>
-            <p>
-                Flexbox o Flexible Box es un modulo que provee una forma mucho más sencilla de ordenar, alinear y distribuir el espacio entre los objetos dentro de un contenedor, incluso cuando su tamaño es desconocido y/o dinámico.
-            </p>
-            <p>
-                La principal idea detras de flex es dar a los objetos dentro del contenedor la habilidad para alterar el alto y ancho de estos para que ocupen el máximo de espacio disponible para que se acomode a todo tipo de pantallas, expandiéndolos o encogiéndolos. Además, este está basado en una dimensión, es decir, todos los elementos se disponen en una línea, la cual los coloca de forma automática, haciendo lo anteriormente mencionado de encoger y expandir o poniendo unos debajo de otros cuando lleguen al tamaño máximo del contenedor si tenemos la propiedad llamada "flex-wrap" activa (aunque siga siendo "una línea" por así decirlo).
-            </p>
-            <figure>
-                <img src="assets\img\flwr.png" alt="Representación de flex-wrap">
-                <figcaption>Representación de la propiedad "flex-wrap"—Imagen por "CSS-Tricks"</figcaption>
-            </figure>
-            <p>
-                Lo más importante de flexbox es que, a diferencia del tipo "block", verticalmente direccional, o el tipo "inline", horizontalmente direccional, el tipo flex ignora las direcciones. Mientras los otros funcionan bien para páginas, tienen una gran falta de flexibilidad a la hora de respaldar aplicaciones grandes o complejas, especialmente cuando a cambios de orientación, redimensionar, estirar o encoger se refiere.
-            </p>
-            <p>
-                Nota: Flexbox es más indicado para los componentes de una aplicación y diseños pequeños, mientras que Grid es más indicado para diseños o layouts a mayor escala.
-            </p>
-            <p>
-                Ya que flexbox es un módulo completo y no solo una propiedad, involucra varias cosas, incluyendo un set completo de propiedades. Algunas de ellas están hechas para ser colocadas en el contenedor o padre (flex container) mientras que otras van colocadas en los elementos interiores o hijos (flex items). En <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-properties" target="_blank" rel="external noopener noreferrer">esta sección de su página (se abre en una pestaña nueva)</a> se encuentra una lista con los distintos atributos aplicables tanto a padres como a hijos con imagenes ilustrativas del funcionamiento de estos.
-            </p>
-            <p>  
-                Aparte, el resto de elementos siguen las direcciones "block" e "inline". Por otro lado, flex se basa en un sistema propio de direcciones, representado en la siguiente imagen.
-            </p>
-            <figure>
-                <img src="assets\img\flex-direct.svg" alt="Flex-flow-directions">
-                <figcaption>"Flex-flow-directions"—Imagen por "W3C"</figcaption>
-            </figure>
-            <p>
-                Para acabar, cabe destacar que Bootstrap cuenta con clases para los atributos de flex para padres e hijos, las cuales se encuentran en el <a href="#tablaflex">apartado flex</a> de la tabla de clases ubicada más adelante.
-            </p>
-        </section>
-        <section>
-            <h2 id="Modelo-Grid">Modelo Grid</h2>
-            <p>
-                CSS Grid Layout (aka “Grid” or “CSS Grid”), is a two-dimensional grid-based layout system that, compared to any web layout system of the past, completely changes the way we design user interfaces. CSS has always been used to layout our web pages, but it’s never done a very good job of it. First, we used tables, then floats, positioning and inline-block, but all of these methods were essentially hacks and left out a lot of important functionality (vertical centering, for instance). Flexbox is also a very great layout tool, but its one-directional flow has different use cases — and they actually work together quite well! Grid is the very first CSS module created specifically to solve the layout problems we’ve all been hacking our way around for as long as we’ve been making websites.
-
-                The intention of this guide is to present the Grid concepts as they exist in the latest version of the specification. So I won’t be covering the out-of-date Internet Explorer syntax (even though you can absolutely use Grid in IE 11) or other historical hacks.
-            </p>
-        </section>
-        <section>
-            <h2 id="CuerpoClases">Clases</h2>
-            <p>Bootstrap cuenta con varias clases con funcionalidades unicas, todas ellas explicadas en detalle en el <a href="https://getbootstrap.com/docs/5.1/components" target="_blank" rel="external noopener noreferrer">apartado componentes de la web oficial de Bootstrap (se abre en una pestaña nueva)</a>, por lo que en esta sección encontraras una tabla ordenada alfabeticamente a modo de referencia para implementar dichas clases css de forma rápida, con posible ampliación en un futuro.</p>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">TIPO</th>
-                        <th scope="col">ESTILO</th>
-                        <th scope="col">USO</th>
-                        <th scope="col">VARIANTES</th>
-                        <th scope="col">APLICACIÓN</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="rowgroup">Affix</th>
-                        <th scope="row">Affix</th>
-                        <td>data-spy="affix"|data-offset-top=""</td>
-                        <td>&nbsp;</td>
-                        <td>Affix es un plugin que aplica la clase fixed a un elemento cuando llega a la altura especificada por el data-offset</td>
-                    </tr>
-                    <tr>
-                        <th rowspan="8" scope="rowgroup">Alertas</th>
-                        <th scope="row">Alert</th>
-                        <td>class="alert"</td>
-                        <td>&nbsp;</td>
-                        <td>Esta clase indica que la etiqueta donde la pongas contiene una alerta. Por si sola solo añade un container con margin y padding, pero es necesaria combinarla con una de las siguientes etiquetas de alerta para formar una alerta.</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Alerta informativa</th>
-                        <td>class="alert-info"</td>
-                        <td>&nbsp;</td>
-                        <td>Crea una caja celeste que indica información</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Alerta de éxito</th>
-                        <td>class="alert-success"</td>
-                        <td>&nbsp;</td>
-                        <td>Crea una caja verde que indica éxito o una acción positiva</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Alerta de precaución</th>
-                        <td>class="alert-warning"</td>
-                        <td>&nbsp;</td>
-                        <td>Crea una caja amarilla que indica precaución</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Alerta de peligro</th>
-                        <td>class="alert-danger"</td>
-                        <td>&nbsp;</td>
-                        <td>Crea una caja roja que indica peligro o una acción negativa</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Link en alertas</th>
-                        <td>class="alert-link"</td>
-                        <td>&nbsp;</td>
-                        <td>Se usa para que cualquier link dentro de una alerta tenga los mismos colores que esta</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Alerta cerrable</th>
-                        <td>class="alert-dismissible"|&lt;a href="#" class="close" data-dismiss="alert" aria-label="close"&gt;&times;&lt;/a&gt; antes del contenido de la alerta</td>
-                        <td>&nbsp;</td>
-                        <td>Indica que la alerta puede ser cerrada y crea un simbolo, en este caso una x, al final de la alerta para cerrarla</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Desvanecimiento</th>
-                        <td>class="fade"</td>
-                        <td>&nbsp;</td>
-                        <td>Añade un efecto de desvanecimiento a las alertas cerrables</td>
-                    </tr>
-                    <tr>
-                        <th scope="rowgroup">Insignia</th>
-                        <th scope="row">Insignia</th>
-                        <td>class="badge"</td>
-                        <td>&nbsp;</td>
-                        <td>Crea una una insignia circular gris, normalmente usados como un indicador numérico</td>
-                    </tr>
-                    <tr>
-                        <th rowspan="14" scope="rowgroup">Botones</th>
-                        <th scope="row">Alert</th>
-                        <td>class="alert"</td>
-                        <td>&nbsp;</td>
-                        <td>Esta clase indica que la etiqueta donde la pongas contiene una alerta. Por si sola solo añade un container con margin y padding, pero es necesaria combinarla con una de las siguientes etiquetas de alerta para formar una alerta.</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Desvanecimiento</th>
-                        <td>class="fade"</td>
-                        <td>&nbsp;</td>
-                        <td>Añade un efecto de desvanecimiento a las alertas cerrables</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section>
-            <h2 id="IconosBoot">Iconos</h2>
         </section>
     </main>
 </body>

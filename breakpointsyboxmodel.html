@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Breakpoints y Modelo de caja - Guía suprema de Bootstrap sin Bootstrap</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css; script-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js; form-action 'self'; report-uri 'self'; sandbox 'none'; frame-ancestors 'none';  base-uri 'none';">
+    <meta http-equiv="Feature-Policy" content=" camera 'none'; microphone 'none'; geolocation 'none'; payment 'self';">
+    <!-- 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    -->
+    <link rel="icon" type="image/x-icon" href="assets\img\favicon.ico">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <script src="assets/js/main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>GUÍA SUPREMA DE BOOTSTRAP</h1>
+        <p>(pero sin Bootstrap)</p>
+    </header>
+    <aside>
+        <nav id="darkModeNav" class="form-check form-switch">
+            <ol>
+                <li><a href="index.html"> Bootstrap</a></li>
+                <li><a href="index.html#InstalacionyUso">Instalación y Uso</a></li>
+                <li><a href="#Breakpoints">Breakpoints</a></li>
+                <li><a href="breakpointsyboxmodel.html#Modelo-Caja">Modelo de Caja</a></li>
+                <li><a href="flexygrid.html">Modelo Flexbox</a></li>
+                <li><a href="flexygrid.html#Modelo-Grid">Modelo Grid</a></li>
+                <li><a href="claseseiconos.html">Clases</a></li>
+                <li><a href="claseseiconos.html#IconosBoot">Iconos</a></li>
+            </ol>
+        </nav>
+        <button id="toggleboot">Añadir Bootstrap</button>
+    </aside>
+    <section>
+        <h2 id="Breakpoints">Breakpoints</h2>
+        <p>Bootstrap está diseñado para ser "responsive", por lo que gran cantidad de sus clases cuentan con la opción del uso de breakpoints. En resumidas cuentas podemos indicar que estilo queremos usar dependiendo del viewpoint, es decir, el tamaño de nuestra pantalla. Por ejemplo, si le damos a un párrafo las clases p-md-2 y p-lg-4, este tendrá un padding de 0.5 rem en pantallas con un ancho mayor o igual a 768px y 1.5 rem en pantallas un ancho mayor o igual a 992px. La estructura básica de estas clases se forma por un prefijo, que indica que estilo queremos aplicar como puede ser "p" para padding o "m" para margin, un interfijo, que denota el tamaño a partir del que funciona nuestra clase, y un sufijo, que sería el tamaño del prefijo de nuestra clase. A continuación dejaré una tabla de interfijos para consultar los distintos breakpoints disponibles y otra de sufijos con los distintos tamaños soportados.</p>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">TIPO</th>
+                    <th scope="col">INTERFIJO</th>
+                    <th scope="col">TAMAÑO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="rowgroup">Extra pequeña</th>
+                    <td scope="row">Ninguno</td>
+                    <td>&lt;576px</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">Pequeña</th>
+                    <td scope="row">sm</td>
+                    <td>&ge;576px</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">Mediana</th>
+                    <td scope="row">md</td>
+                    <td>&ge;768px</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">Grande</th>
+                    <td scope="row">lg</td>
+                    <td>&ge;992px</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">Extra grande</th>
+                    <td scope="row">xl</td>
+                    <td>&ge;1200px</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">Extra extra grande</th>
+                    <td scope="row">xxl</td>
+                    <td>&ge;1400px</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">SUFIJO</th>
+                    <th scope="col">USABLE EN</th>
+                    <th scope="col">VALOR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="rowgroup">0</th>
+                    <td scope="row">margin o padding</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">1</th>
+                    <td scope="row">margin o padding</td>
+                    <td>$spacer * 0.25rem</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">2</th>
+                    <td scope="row">margin o padding</td>
+                    <td>$spacer * 0.5rem</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">3</th>
+                    <td scope="row">margin o padding</td>
+                    <td>$spacer</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">4</th>
+                    <td scope="row">margin o padding</td>
+                    <td>$spacer * 1.5rem</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">5</th>
+                    <td scope="row">margin o padding</td>
+                    <td>$spacer * 3rem</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">auto</th>
+                    <td scope="row">margin</td>
+                    <td>auto</td>
+                </tr>
+            </tbody>
+        </table>
+        <footer>$spacer es un atributo editable que se encuentra en el SASS de Bootstrap en caso de que lo hayas instalado así. Tiene un valor por defecto de 1rem.</footer>
+    </section>
+    <section>
+        <h2 id="Modelo-Caja">Modelo de Caja</h2>
+        <dl>
+            <dt>Exterior de una caja:</dt>
+            <dd>
+                <p>
+                    En CSS todos los objetos tienen una caja alrededor, por así decirlo. Estas interactúan entre sí y se usan para alinear objetos. Entender su funcionamiento es clave a la hora de crear el diseño de una página. Lo primero que debes saber es que existen dos tipos de cajas con funciones distintas, las cuales se definen mediante la propiedad "display" y los valores "block" e "inline". Estas se diferencian en lo siguiente:
+                </p>
+                <dl>
+                    <dt>Cajas "Block":</dt>
+                    <dd>
+                        <ul>
+                            <li>
+                                El elemento se posiciona en una línea nueva.
+                            </li>
+                            <li>
+                                La caja se expande en la dirección del "inline" (representada en la imagen más abajo, aunque suele ser de izquierda a derecha) y en la mayoría de los casos ocupa todo el espacio disponible en su recipiente.
+                            </li>
+                            <li>
+                                Las propiedades alto y ancho se respetan.
+                            </li>
+                            <li>
+                                El padding, margin y border causan que los otros elementos sean empujados.
+                            </li>
+                            <li>
+                                Algunos elementos HTML como el h1 y el p, utilizan cajas del tipo "block".
+                            </li>
+                        </ul>                            
+                    </dd>
+                    <dt>Cajas "Inline":</dt>
+                    <dd>
+                        <ul>
+                            <li>
+                                El elemento se posiciona en la misma línea.
+                            </li>
+                            <li>
+                                Las propiedades alto y ancho se ignoran.
+                            </li>
+                            <li>
+                                El padding, margin y border afectan a la caja, pero no causan que los otros elementos "inline" sean empujados.
+                            </li>
+                            <li>
+                                El padding, margin y border horizontal si empujan otras cajas "inline".
+                            </li>
+                            <li>
+                                Algunos elementos HTML como el span, em y strong usan cajas "inline" por defecto.
+                            </li>
+                        </ul>            
+                    </dd>
+                </dl>    
+                <footer>
+                    <figure>
+                        <img src="assets\img\strbl-in.png" alt="Diferencias entre un elemento block e inline">
+                        <figcaption>Diferencias entre un elemento "block" e "inline"</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="assets\img\boxmodel.png" alt="Modelo de caja">
+                        <figcaption>Representación del exterior una caja—Imagen por "Jacob Kagon"</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="assets\img\bl-in.png" alt="Dirección block e inline">
+                        <figcaption>Expansión de los contenidos en las direcciones "block" e "inline"—Imagen por "MDN Web Docs"</figcaption>
+                    </figure>
+                </footer>
+            </dd>
+            <dt>Interior de una caja:</dt>
+            <dd>
+                <p>
+                    Las cajas, además de lo mencionado anteriormente, tienen otras propiedades que indican como se van a posicionar los elementos dentro de estas. Por defecto, los elementos dentro de las cajas se comportan normal, es decir, como cualquier otro elemento "block" o "inline".
+                </p>
+                <p>
+                    Podemos cambiar el comportamiento de estos empleando la propiedad "display" con valores como Grid o Flex. En este caso, por ejemplo, si utilizamos "display: flex" en un elemento, el exterior se comporta como una caja tipo "block", sin embargo, el interior cambia a tipo "flex". Cualquier objeto o elemento que se encuentre directamente dentro de este seguirá las normas de Flexbox, las cuales están explicadas más adelante.
+                </p>
+            </dd>
+        </dl>
+    </section>
+</body>
+</html>
