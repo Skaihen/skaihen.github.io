@@ -23,12 +23,12 @@
     <aside>
         <nav id="darkModeNav" class="form-check form-switch">
             <ol>
-                <li><a href="#ResumenBootstrap"> Bootstrap</a></li>
+                <li><a href="index.html"> Bootstrap</a></li>
                 <li><a href="index.html#InstalacionyUso">Instalación y Uso</a></li>
-                <li><a href="breakpointsyboxmodel.html">Breakpoints</a></li>
-                <li><a href="breakpointsyboxmodel.html#Modelo-Caja">Modelo de Caja</a></li>
-                <li><a href="flexygrid.html">Modelo Flexbox</a></li>
-                <li><a href="flexygrid.html#Modelo-Grid">Modelo Grid</a></li>
+                <li><a href="boxmodelyflex.html">Modelo de Caja</a></li>
+                <li><a href="boxmodelyflex.html#Resumen-Flexbox">Flexbox</a></li>
+                <li><a href="breakpointsygrid.html">Breakpoints</a></li>
+                <li><a href="breakpointsygrid.html#Resumen-Grid">Grid</a></li>
                 <li><a href="claseseiconos.html">Clases</a></li>
                 <li><a href="claseseiconos.html#IconosBoot">Iconos</a></li>
             </ol>
@@ -38,13 +38,21 @@
     <main>
         <section>
             <h2 id="ResumenBootstrap">Bootstrap</h2>
-            <p>Para empezar con esta guía lo primero es saber de qué se trata Bootstrap. Bajo el signo "mobile-first", Bootstrap es un framework orientado a la creación de páginas web adaptables de forma rápida y sencilla, el cual añade elementos como iconos o clases que cuentan con distintos estilos.</p>
-            <p>Antes de proceder con el resto de la guía cabe mencionar que, pese a las ventajas de Bootstrap a la hora de crear páginas web como la rapidez a corto y largo plazo al tener gran parte de los estilos creados, estos cuentan con la etiqueta !important, y al ser tantos, es posible que nombremos una clase igual a una ya creada por Bootstrap, lo que da pie a errores o creer que nuestro css está mal y sin saber esto a perder tiempo buscando el fallo. Por suerte son fallos menores que se solucionan cambiando el nombre de nuestra clase o, dependiendo de como implementemos Bootstrap, editables directamente. Cabe destacar que Bootstrap no es necesario para hacer una página, como es el caso de esta, ni para darle estilo, ya que puedes hacer esto con css simplemente si así lo prefieres.</p>
-            <p>También decir que es recomendable entrar en los enlaces que encontrarás en esta página, ya que llevan directamente a las webs oficiales, donde está todo explicado en detalle.</p>
+            <p>
+                Para empezar con esta guía lo primero es saber de qué se trata Bootstrap. Bajo el signo "mobile-first", <dfn>Bootstrap</dfn> es un framework orientado a la creación de páginas web adaptables de forma rápida y sencilla, el cual añade elementos como iconos o clases que cuentan con distintos estilos.
+            </p>
+            <p>
+                Antes de proceder con el resto de la guía cabe mencionar que, pese a las ventajas de Bootstrap a la hora de crear páginas web como la rapidez a corto y largo plazo al tener gran parte de los estilos creados, estos cuentan con la etiqueta !important, y al ser tantos, es posible que nombremos una clase igual a una ya creada por Bootstrap, lo que da pie a errores o creer que nuestro css está mal y sin saber esto a perder tiempo buscando el fallo. Por suerte son fallos menores que se solucionan cambiando el nombre de nuestra clase o, dependiendo de como implementemos Bootstrap, editables directamente. Cabe destacar que Bootstrap no es necesario para hacer una página, como es el caso de esta, ni para darle estilo, ya que puedes hacer esto con css simplemente si así lo prefieres.
+            </p>
+            <p>
+                También decir que es recomendable entrar en los enlaces que encontrarás en esta página, ya que llevan directamente a las webs oficiales, donde está todo explicado en detalle.
+            </p>
         </section>
         <section>
             <h2 id="InstalacionyUso">Instalación y Uso</h2>
-            <p>Bootstrap cuenta con una guía de instalación en su <a href="https://getbootstrap.com/docs/5.1/getting-started/download/" target="_blank" rel="external noopener noreferrer">página principal (se abre en una pestaña nueva)</a>, a la cual acudiremos más adelante, aunque se resume en tres formas distintas dependiendo de nuestras preferencias.</p>
+            <p>
+                Bootstrap cuenta con una guía de instalación en su <a href="https://getbootstrap.com/docs/5.1/getting-started/download/" target="_blank" rel="external noopener noreferrer">página principal (se abre en una pestaña nueva)</a>, a la cual acudiremos más adelante, aunque se resume en tres formas distintas dependiendo de nuestras preferencias.
+            </p>
             <dl>
                 <dt>jsDelivr:</dt>
                 <dd>La primera manera y más sencilla es el uso de jsDelivr, con la cual lo único que debemos hacer es añadir al head de nuestro HTML un link al CSS de Bootstrap y una o dos etiquetas script con referencias al JavaScript de Bootstrap y Popper dependiendo de que elijamos. Ambas etiquetas se pueden encontrar actualizadas <a href="https://getbootstrap.com/docs/5.1/getting-started/download/#cdn-via-jsdelivr" target="_blank" rel="external noopener noreferrer">en esta sección de su página de descarga (se abre en una pestaña nueva)</a>. Esta opción es la más conveniente, ya que tiene toda la funcionalidad de Bootstrap sin complicarnos demasiado y nos es útil si no queremos profundizar mucho en la estructura o queremos maquetar una página de un modo rápido.</dd>

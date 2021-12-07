@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Breakpoints y Grid - Guía suprema de Bootstrap sin Bootstrap</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css; script-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js; form-action 'self'; report-uri 'self'; sandbox 'none'; frame-ancestors 'none';  base-uri 'none';">
+    <meta http-equiv="Feature-Policy" content=" camera 'none'; microphone 'none'; geolocation 'none'; payment 'self';">
+    <!-- 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    -->
+    <link rel="icon" type="image/x-icon" href="assets\img\favicon.ico">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <script src="assets/js/main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>GUÍA SUPREMA DE BOOTSTRAP</h1>
+        <p>(pero sin Bootstrap)</p>
+    </header>
+    <aside>
+        <nav id="darkModeNav" class="form-check form-switch">
+            <ol>
+                <li><a href="index.html"> Bootstrap</a></li>
+                <li><a href="index.html#InstalacionyUso">Instalación y Uso</a></li>
+                <li><a href="boxmodelyflex.html">Modelo de Caja</a></li>
+                <li><a href="boxmodelyflex.html#Resumen-Flexbox">Flexbox</a></li>
+                <li><a href="breakpointsygrid.html">Breakpoints</a></li>
+                <li><a href="breakpointsygrid.html#Resumen-Grid">Grid</a></li>
+                <li><a href="claseseiconos.html">Clases</a></li>
+                <li><a href="claseseiconos.html#IconosBoot">Iconos</a></li>
+            </ol>
+        </nav>
+        <button id="toggleboot">Añadir Bootstrap</button>
+    </aside>
+    <section>
+        <h2 id="Breakpoints">Breakpoints</h2>
+        <p>
+            Bootstrap está diseñado para ser "responsive", por lo que gran cantidad de sus clases cuentan con la opción del uso de <dfn>breakpoints</dfn>. En resumidas cuentas podemos indicar que estilo queremos usar dependiendo del viewpoint, es decir, el tamaño de nuestra pantalla. Por ejemplo, si le damos a un párrafo las clases p-md-2 y p-lg-4, este tendrá un padding de 0.5 rem en pantallas con un ancho mayor o igual a 768px y 1.5 rem en pantallas un ancho mayor o igual a 992px. La estructura básica de estas clases se forma por un prefijo, que indica que estilo queremos aplicar como puede ser "p" para padding o "m" para margin, un interfijo, que denota el tamaño a partir del que funciona nuestra clase, y un sufijo, que sería el tamaño del prefijo de nuestra clase. A continuación dejaré una tabla de interfijos para consultar los distintos breakpoints disponibles y otra de sufijos con los distintos tamaños soportados. Antes de seguir decir que los tamaños de los breakpoints pueden personalizarse desde la hoja de estilos de Bootstrap si lo has instalado.
+        </p>
+        <table id="Tabla-Breakpoints" class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">TIPO</th>
+                    <th scope="col">INTERFIJO</th>
+                    <th scope="col">TAMAÑO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="rowgroup">Extra pequeña</th>
+                    <td scope="row">Ninguno</td>
+                    <td>&lt;576px</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">Pequeña</th>
+                    <td scope="row">sm</td>
+                    <td>&ge;576px</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">Mediana</th>
+                    <td scope="row">md</td>
+                    <td>&ge;768px</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">Grande</th>
+                    <td scope="row">lg</td>
+                    <td>&ge;992px</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">Extra grande</th>
+                    <td scope="row">xl</td>
+                    <td>&ge;1200px</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">Extra extra grande</th>
+                    <td scope="row">xxl</td>
+                    <td>&ge;1400px</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">SUFIJO</th>
+                    <th scope="col">USABLE EN</th>
+                    <th scope="col">VALOR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="rowgroup">0</th>
+                    <td scope="row">margin o padding</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">1</th>
+                    <td scope="row">margin o padding</td>
+                    <td>$spacer * 0.25rem</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">2</th>
+                    <td scope="row">margin o padding</td>
+                    <td>$spacer * 0.5rem</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">3</th>
+                    <td scope="row">margin o padding</td>
+                    <td>$spacer</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">4</th>
+                    <td scope="row">margin o padding</td>
+                    <td>$spacer * 1.5rem</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">5</th>
+                    <td scope="row">margin o padding</td>
+                    <td>$spacer * 3rem</td>
+                </tr>
+                <tr>
+                    <th scope="rowgroup">auto</th>
+                    <td scope="row">margin</td>
+                    <td>auto</td>
+                </tr>
+            </tbody>
+        </table>
+        <footer>
+            $spacer es un atributo editable que se encuentra en el SASS de Bootstrap en caso de que lo hayas instalado así. Tiene un valor por defecto de 1rem.
+        </footer>
+    </section>
+    <section>
+        <h2 id="Resumen-Grid">Grid</h2>
+        <p>
+            CSS siempre se ha usado a la hora de organizar páginas, pero nunca ha sido muy bueno en esto. Primero, se utilizaban tablas, luego "floats", posicionamiento y el "inline"-"block", no obstante todos estos métodos son en esencia trucos y dejan fuera muchas funcionalidades importantes (centrado vertical, por ejemplo). Grid es y fue el primer modulo CSS creado específicamente para resolver los problemas de disposición que se han estado arreglando con estos trucos y que, comparado con cualquier otro sistema anterior, cambió completamente el modo en el que creamos interfaces web.
+        </p>
+        <p>    
+            <dfn>CSS Grid o Grid</dfn> es un sistema de disposición de elementos en dos dimensiones basado en cuadrículas y, aunque Flexbox es también una herramienta muy buena, su sistema unidireccional tiene casos de uso distintos (y de hecho funcionan muy bien juntos).  
+        </p>
+        <p>
+            Antes de seguir, cabe destacar que Bootstrap tiene un sistema grid propio que, pese a ser muy similar al de CSS es también algo distinto, por lo que resumiré el de Bootstrap específicamente en esta página. Si quieres saber más sobre CSS Grid puedes encontrar información ilustrada en <a href="https://css-tricks.com/snippets/css/complete-guide-grid/#important-terminology" target="_blank" rel="external noopener noreferrer">la web de CSS-Tricks (se abre en una pestaña nueva)</a>
+        </p>
+        <p>
+            El anteriormente mencionado sistema Grid que usa Bootstrap es muy sencillo de usar y de entender, por lo que es una gran herramienta a la hora de producir diseños para webs. Para empezar, debes saber es que este está construido con Flexbox y que deja generar un total de 12 unidades o columnas a lo largo del contenedor en el que se encuentre (puede ser la página entera), los cuales se pueden utilizar de distintas formas. Para empezar crear nuestro Grid tenemos que tener la siguiente jerarquía fundamental:  
+        </p>
+        <dl>
+            <dt>
+                Container:
+            </dt>
+            <dd>
+                Lo primero que necesitamos es contenedor donde colocar nuestro Grid, que dictará el tamaño del mismo, es decir, el ancho de nuestras filas y el alto de nuestras columnas. Realmente no es necesario tener un contenedor y nuestras filas tendrán el ancho del "body", aunque no está de más tenerlo.
+            </dd>
+            <dt>
+                Row:
+            </dt>
+            <dd>
+                Lo segundo en nuestra estructura son las filas. Para crearlas basta con poner la clase "row" al elemento que queramos que sea nuestra fila, que de nuevo puede ser cualquier etiqueta.
+            </dd>
+            <dt>
+                Col:
+            </dt>
+            <dd>
+                Por último pero no menos importante, las columnas. Esta es la clase que definirá como será nuestra cuadrícula, la cual va en los elementos que queramos que sean nuestras columnas, dentro del elemento con la clase "row". Retomando el párrafo anterior, podemos tener un total de 12 columnas como máximo en nuestro Grid, las cuales podemos asignar de forma automática o de manera manual.
+            </dd>
+        </dl>
+        <p>
+            Si queremos que nuestra cuadrícula se construya de manera automática y/o que todas las columnas se repartan de modo equitativo, solo tenemos que añadir la clase "col" a estas y Bootstrap se encargará del resto, el cual las dispondrá intentando que todas queden en la misma línea si es eso posible. Por otro lado, podemos asignar el tamaño de nuestras columnas de manera manual nombrando a la clase de la siguiente modo: col-*-2. Más adelante veremos que significa el *, de momento me voy a centrar en el ejemplo. En este caso, nuestra columna abarcará unidades por así decirlo (una unidad se refiere al ancho de una columna, la cual se obtiene dividiendo el contenedor inicial en 12 partes). Este valor varía entre 1 y 12, el cual nunca se puede sobrepasar, aunque no es necesario alcanzarlo, es decir, podemos tener tres columnas en nuestra fila con los valores 4, 4 y 3 (esta última unidad simplemente se queda en blanco). También tenemos la opción de poner "auto" en vez de un valor numérico para que la columna sea "responsive" y se ajuste automáticamente al tamaño del contenido interior a esta. Con lo anterior ya tendríamos una fila, y lo único que tenemos que hacer ahora es repetir esta secuencia tantas veces como queramos dentro de nuestro contenedor para ir creando nuestra cuadrícula.
+        </p>
+        <figure>
+            <img src="assets\img\rpgr.png" alt="Representación Grid Bootstrap">
+            <figcaption>Representación de una cuadrícula—Imagen por "W3Schools"</figcaption>
+        </figure>
+        <p>
+            Con lo anterior habremos realizado nuestro Grid que, aunque se encoja y se expanda, nunca cambiará ni en orden ni en forma sus elementos, por lo que realmente no llega a ser "responsive" o adaptable (a menos que lo hayamos hecho con la opción automática). Para lograr esto tendremos que hacer uso de los breakpoints. Los valores de estos se pueden consultar en <a href="#Tabla-Breakpoints">la tabla de breakpoints de la sección anterior</a>, y se emplearían así: col-md-3 col-sm-6. Como se puede deducir, el tamaño de la columna será de 3 unidades para pantallas o contenedores mayores o iguales a 768px, de 6 para pantallas o contenedores mayores o iguales a 576px o de 12 para tamaños menores a los especificados.
+        </p>
+        <p>
+            Además de esto, puedes añadir una clase extra a las filas para indicar cuantas columnas queremos por fila, es decir, podemos tener 7 columnas con la clase "col" sin más, por ejemplo, y añadir las clases "row" y "row-cols-*-3" para que cada fila contenga 3 de estas columnas. Al igual que la etiqueta "col", esta puede usar breakpoints y la opción de poner como valor "auto". Por último decir que hay varias clases incluyendo los "gutters", que son espacios entre columnas, las cuales encontraras en la <a href="tablagrid">parte de Grid</a> de la tabla de clases más adelante. También dejo a modo de referencia <a href="https://getbootstrap.com/docs/5.1/examples/grid/" target="_blank" rel="external noopener noreferrer">esta página con distintos tipos de Grids "responsive" de Bootstrap (se abre en una pestaña nueva)</a> por si quieres verlos en funcionamiento.
+        </p>
+    </section>
+</body>
+</html>
