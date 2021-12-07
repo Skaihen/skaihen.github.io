@@ -35,113 +35,115 @@
         </nav>
         <button id="toggleboot">Añadir Bootstrap</button>
     </aside>
-    <section>
-        <h2 id="Modelo-Caja">Modelo de Caja</h2>
-        <dl>
-            <dt>Exterior de una caja:</dt>
-            <dd>
-                <p>
-                    En CSS todos los objetos tienen una caja alrededor, por así decirlo. Estas interactúan entre sí y se usan para alinear objetos. Entender su funcionamiento es clave a la hora de crear el diseño de una página. Lo primero que debes saber es que existen dos tipos de cajas con funciones distintas, las cuales se definen mediante la propiedad "display" y los valores "block" e "inline". Estas se diferencian en lo siguiente:
-                </p>
-                <dl>
-                    <dt>Cajas "Block":</dt>
-                    <dd>
-                        <ul>
-                            <li>
-                                El elemento se posiciona en una línea nueva.
-                            </li>
-                            <li>
-                                La caja se expande en la dirección del "inline" (representada en la imagen más abajo, aunque suele ser de izquierda a derecha) y en la mayoría de los casos ocupa todo el espacio disponible en su recipiente.
-                            </li>
-                            <li>
-                                Las propiedades alto y ancho se respetan.
-                            </li>
-                            <li>
-                                El padding, margin y border causan que los otros elementos sean empujados.
-                            </li>
-                            <li>
-                                Algunos elementos HTML como el h1 y el p, utilizan cajas del tipo "block".
-                            </li>
-                        </ul>                            
-                    </dd>
-                    <dt>Cajas "Inline":</dt>
-                    <dd>
-                        <ul>
-                            <li>
-                                El elemento se posiciona en la misma línea.
-                            </li>
-                            <li>
-                                Las propiedades alto y ancho se ignoran.
-                            </li>
-                            <li>
-                                El padding, margin y border afectan a la caja, pero no causan que los otros elementos "inline" sean empujados.
-                            </li>
-                            <li>
-                                El padding, margin y border horizontal si empujan otras cajas "inline".
-                            </li>
-                            <li>
-                                Algunos elementos HTML como el span, em y strong usan cajas "inline" por defecto.
-                            </li>
-                        </ul>            
-                    </dd>
-                </dl>    
-                <footer>
-                    <figure>
-                        <img src="assets\img\strbl-in.png" alt="Diferencias entre un elemento block e inline">
-                        <figcaption>Diferencias entre un elemento "block" e "inline"</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="assets\img\boxmodel.png" alt="Modelo de caja">
-                        <figcaption>Representación del exterior una caja—Imagen por "Jacob Kagon"</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="assets\img\bl-in.png" alt="Dirección block e inline">
-                        <figcaption>Expansión de los contenidos en las direcciones "block" e "inline"—Imagen por "MDN Web Docs"</figcaption>
-                    </figure>
-                </footer>
-            </dd>
-            <dt>Interior de una caja:</dt>
-            <dd>
-                <p>
-                    Las cajas, además de lo mencionado anteriormente, tienen otras propiedades que indican como se van a posicionar los elementos dentro de estas. Por defecto, los elementos dentro de las cajas se comportan normal, es decir, como cualquier otro elemento "block" o "inline".
-                </p>
-                <p>
-                    Podemos cambiar el comportamiento de estos empleando la propiedad "display" con valores como Grid o Flex. En este caso, por ejemplo, si utilizamos "display: flex" en un elemento, el exterior se comporta como una caja tipo "block", sin embargo, el interior cambia a tipo "flex". Cualquier objeto o elemento que se encuentre directamente dentro de este seguirá las normas de Flexbox, las cuales están explicadas más adelante.
-                </p>
-            </dd>
-        </dl>
-    </section>
-    <section>
-        <h2 id="Resumen-Flexbox">Flexbox</h2>
-        <p>
-            <dfn>Flexbox o Flexible Box</dfn> es un módulo que provee una forma mucho más sencilla de ordenar, alinear y distribuir el espacio entre los objetos dentro de un contenedor, incluso cuando su tamaño es desconocido y/o dinámico.
-        </p>
-        <p>
-            La principal idea detrás de Flex es dar a los objetos dentro del contenedor la habilidad de alterar tanto el ancho como el alto de estos para que ocupen el máximo de espacio disponible y se acomoden a todo tipo de pantallas, expandiéndolos o encogiéndolos. Además, este está basado en una dimensión, es decir, todos los elementos se disponen en una línea, la cual los coloca de manera automática, haciendo lo anteriormente mencionado de encoger y expandir o colocando unos debajo de otros cuando lleguen al tamaño máximo del contenedor si tenemos la propiedad llamada "flex-wrap" activa (aunque siga siendo "una línea" por así decirlo).
-        </p>
-        <figure>
-            <img src="assets\img\flwr.png" alt="Representación de flex-wrap">
-            <figcaption>Representación de la propiedad "flex-wrap"—Imagen por "CSS-Tricks"</figcaption>
-        </figure>
-        <p>
-            Lo más importante de Flexbox es que, a diferencia del tipo "block", verticalmente direccional, o el tipo "inline", horizontalmente direccional, el tipo Flex ignora las direcciones. Mientras los otros funcionan bien para páginas, tienen una gran falta de flexibilidad a la hora de respaldar aplicaciones grandes o complejas, especialmente cuando a cambios de orientación, redimensionar, estirar o encoger se refiere.
-        </p>
-        <p>
-            Nota: Flexbox es más indicado para los componentes de una aplicación y diseños pequeños, mientras que Grid es mejor en cuanto a diseños o layouts a mayor escala. Aclarar también que solo los objetos en el interior del contenedor con el atributo "display: flex" sigue las normas explicadas en este apartado y que el exterior se trata como una caja del tipo "block". Existe también el atributo "display: inline-flex" en caso de que queramos que este sea una caja tipo "inline".
-        </p>
-        <p>
-            Ya que Flexbox es un módulo completo y no solo una propiedad, involucra varias cosas, incluyendo un set completo de propiedades. Algunas de ellas están hechas para ser colocadas en el contenedor o padre (flex container) mientras que otras van colocadas en los elementos interiores o hijos (flex items). En <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-properties" target="_blank" rel="external noopener noreferrer">esta sección de su página (se abre en una pestaña nueva)</a> se encuentra una lista con los distintos atributos aplicables tanto a padres como a hijos con imágenes ilustrativas del funcionamiento de estos (es de gran ayuda, ya que Flex es mucho más sencilla de entender con referencias visuales).
-        </p>
-        <p>  
-            Aparte, el resto de elementos siguen las direcciones "block" e "inline". Por otro lado, Flex se basa en un sistema propio de direcciones, representado en la siguiente imagen.
-        </p>
-        <figure>
-            <img src="assets\img\flex-direct.svg" alt="Flex-flow-directions">
-            <figcaption>"Flex-flow-directions"—Imagen por "W3C"</figcaption>
-        </figure>
-        <p>
-            Para acabar, cabe destacar que Bootstrap cuenta con clases para los atributos de Flex, padres e hijos, las cuales encontrarás en el apartado clases más adelante.
-        </p>
-    </section>
+    <main>
+        <section>
+            <h2 id="Modelo-Caja">Modelo de Caja</h2>
+            <dl>
+                <dt>Exterior de una caja:</dt>
+                <dd>
+                    <p>
+                        En CSS todos los objetos tienen una caja alrededor, por así decirlo. Estas interactúan entre sí y se usan para alinear objetos. Entender su funcionamiento es clave a la hora de crear el diseño de una página. Lo primero que debes saber es que existen dos tipos de cajas con funciones distintas, las cuales se definen mediante la propiedad "display" y los valores "block" e "inline". Estas se diferencian en lo siguiente:
+                    </p>
+                    <dl>
+                        <dt>Cajas "Block":</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    El elemento se posiciona en una línea nueva.
+                                </li>
+                                <li>
+                                    La caja se expande en la dirección del "inline" (representada en la imagen más abajo, aunque suele ser de izquierda a derecha) y en la mayoría de los casos ocupa todo el espacio disponible en su recipiente.
+                                </li>
+                                <li>
+                                    Las propiedades alto y ancho se respetan.
+                                </li>
+                                <li>
+                                    El padding, margin y border causan que los otros elementos sean empujados.
+                                </li>
+                                <li>
+                                    Algunos elementos HTML como el h1 y el p, utilizan cajas del tipo "block".
+                                </li>
+                            </ul>                            
+                        </dd>
+                        <dt>Cajas "Inline":</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    El elemento se posiciona en la misma línea.
+                                </li>
+                                <li>
+                                    Las propiedades alto y ancho se ignoran.
+                                </li>
+                                <li>
+                                    El padding, margin y border afectan a la caja, pero no causan que los otros elementos "inline" sean empujados.
+                                </li>
+                                <li>
+                                    El padding, margin y border horizontal si empujan otras cajas "inline".
+                                </li>
+                                <li>
+                                    Algunos elementos HTML como el span, em y strong usan cajas "inline" por defecto.
+                                </li>
+                            </ul>            
+                        </dd>
+                    </dl>    
+                    <footer>
+                        <figure>
+                            <img src="assets\img\strbl-in.png" alt="Diferencias entre un elemento block e inline">
+                            <figcaption>Diferencias entre un elemento "block" e "inline"</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets\img\boxmodel.png" alt="Modelo de caja">
+                            <figcaption>Representación del exterior una caja—Imagen por "Jacob Kagon"</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets\img\bl-in.png" alt="Dirección block e inline">
+                            <figcaption>Expansión de los contenidos en las direcciones "block" e "inline"—Imagen por "MDN Web Docs"</figcaption>
+                        </figure>
+                    </footer>
+                </dd>
+                <dt>Interior de una caja:</dt>
+                <dd>
+                    <p>
+                        Las cajas, además de lo mencionado anteriormente, tienen otras propiedades que indican como se van a posicionar los elementos dentro de estas. Por defecto, los elementos dentro de las cajas se comportan normal, es decir, como cualquier otro elemento "block" o "inline".
+                    </p>
+                    <p>
+                        Podemos cambiar el comportamiento de estos empleando la propiedad "display" con valores como Grid o Flex. En este caso, por ejemplo, si utilizamos "display: flex" en un elemento, el exterior se comporta como una caja tipo "block", sin embargo, el interior cambia a tipo "flex". Cualquier objeto o elemento que se encuentre directamente dentro de este seguirá las normas de Flexbox, las cuales están explicadas más adelante.
+                    </p>
+                </dd>
+            </dl>
+        </section>
+        <section>
+            <h2 id="Resumen-Flexbox">Flexbox</h2>
+            <p>
+                <dfn>Flexbox o Flexible Box</dfn> es un módulo que provee una forma mucho más sencilla de ordenar, alinear y distribuir el espacio entre los objetos dentro de un contenedor, incluso cuando su tamaño es desconocido y/o dinámico.
+            </p>
+            <p>
+                La principal idea detrás de Flex es dar a los objetos dentro del contenedor la habilidad de alterar tanto el ancho como el alto de estos para que ocupen el máximo de espacio disponible y se acomoden a todo tipo de pantallas, expandiéndolos o encogiéndolos. Además, este está basado en una dimensión, es decir, todos los elementos se disponen en una línea, la cual los coloca de manera automática, haciendo lo anteriormente mencionado de encoger y expandir o colocando unos debajo de otros cuando lleguen al tamaño máximo del contenedor si tenemos la propiedad llamada "flex-wrap" activa (aunque siga siendo "una línea" por así decirlo).
+            </p>
+            <figure>
+                <img src="assets\img\flwr.png" alt="Representación de flex-wrap">
+                <figcaption>Representación de la propiedad "flex-wrap"—Imagen por "CSS-Tricks"</figcaption>
+            </figure>
+            <p>
+                Lo más importante de Flexbox es que, a diferencia del tipo "block", verticalmente direccional, o el tipo "inline", horizontalmente direccional, el tipo Flex ignora las direcciones. Mientras los otros funcionan bien para páginas, tienen una gran falta de flexibilidad a la hora de respaldar aplicaciones grandes o complejas, especialmente cuando a cambios de orientación, redimensionar, estirar o encoger se refiere.
+            </p>
+            <p>
+                Nota: Flexbox es más indicado para los componentes de una aplicación y diseños pequeños, mientras que Grid es mejor en cuanto a diseños o layouts a mayor escala. Aclarar también que solo los objetos en el interior del contenedor con el atributo "display: flex" sigue las normas explicadas en este apartado y que el exterior se trata como una caja del tipo "block". Existe también el atributo "display: inline-flex" en caso de que queramos que este sea una caja tipo "inline".
+            </p>
+            <p>
+                Ya que Flexbox es un módulo completo y no solo una propiedad, involucra varias cosas, incluyendo un set completo de propiedades. Algunas de ellas están hechas para ser colocadas en el contenedor o padre (flex container) mientras que otras van colocadas en los elementos interiores o hijos (flex items). En <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-properties" target="_blank" rel="external noopener noreferrer">esta sección de su página (se abre en una pestaña nueva)</a> se encuentra una lista con los distintos atributos aplicables tanto a padres como a hijos con imágenes ilustrativas del funcionamiento de estos (es de gran ayuda, ya que Flex es mucho más sencilla de entender con referencias visuales).
+            </p>
+            <p>  
+                Aparte, el resto de elementos siguen las direcciones "block" e "inline". Por otro lado, Flex se basa en un sistema propio de direcciones, representado en la siguiente imagen.
+            </p>
+            <figure>
+                <img src="assets\img\flex-direct.svg" alt="Flex-flow-directions">
+                <figcaption>"Flex-flow-directions"—Imagen por "W3C"</figcaption>
+            </figure>
+            <p>
+                Para acabar, cabe destacar que Bootstrap cuenta con clases para los atributos de Flex, padres e hijos, las cuales encontrarás en el apartado clases más adelante.
+            </p>
+        </section>
+    </main>
 </body>
 </html>
